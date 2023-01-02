@@ -471,8 +471,9 @@ footer .logo {
 }
 
 .footer-social-title {
+  margin-top: 0;
+  margin-bottom: 0;
   color: #ffffff;
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -529,8 +530,9 @@ footer .logo {
 }
 
 .form-title {
+  margin-top: 0;
+  margin-bottom: 0;
   font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
