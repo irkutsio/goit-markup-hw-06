@@ -69,7 +69,7 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  outline: solid 1px aqua;
+  outline: solid 1px red;
 }
 
 /* header */
@@ -265,9 +265,6 @@ header {
 .projects {
   padding-top: 120px;
   padding-bottom: 120px;
-}
-
-.benefits {
 }
 
 .section-title {
