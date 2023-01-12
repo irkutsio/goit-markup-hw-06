@@ -258,13 +258,16 @@ header {
 
 /* benefits section */
 
-.benefits-section,
+.benefits,
 .activities,
 .our-team,
 .customers,
 .projects {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.benefits {
 }
 
 .section-title {
@@ -293,10 +296,6 @@ header {
 
   margin-top: 8px;
   margin-bottom: 0;
-}
-
-.benefits-section {
-  padding-bottom: 120px;
 }
 
 .benefits {
