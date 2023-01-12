@@ -69,7 +69,7 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  outline: solid 1px tomato;
+  outline: solid 1px aqua;
 }
 
 /* header */
@@ -258,7 +258,11 @@ header {
 
 /* benefits section */
 
-section {
+.benefits-section,
+.activities,
+.our-team,
+.customers,
+.projects {
   padding-top: 120px;
   padding-bottom: 120px;
 }
