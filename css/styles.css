@@ -591,7 +591,12 @@ social-list-link:focus {
   line-height: calc(40 / 36);
   text-align: center;
   letter-spacing: 0.02em;
-  margin-bottom: 72px;
+}
+
+.customers-logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
 }
 
 .customers-logo-item {
@@ -601,8 +606,8 @@ social-list-link:focus {
   margin-left: auto;
 }
 
-.customers-logo-item:not(:last-child) {
-  margin-bottom: 72px;
+.customers-logo-item {
+  margin-top: 72px;
 }
 
 .customers-logo-link {
@@ -632,12 +637,6 @@ social-list-link:focus {
 }
 
 @media screen and (min-width: 480px) {
-  .customers-logo-list {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 16px;
-  }
-
   .customers-logo-item:nth-child(n + 5) {
     margin-bottom: 0;
   }
