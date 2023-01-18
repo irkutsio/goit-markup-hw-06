@@ -248,11 +248,64 @@ header {
 /* hero */
 /*  */
 .hero {
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--primary-color);
   text-align: center;
   padding-top: 112px;
   padding-bottom: 112px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+@media screen and (max-width: 767px) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/mobile-bg.jpg);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/mobile@2-bg.jpg);
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/tablet-bg.jpg);
+  }
+}
+
+@media screen and (min-width: 481px) and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/tablet-bg@2.jpg);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hero {
+    max-width: 1440px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/desktop-bg.jpg);
+  }
+}
+
+@media screen and (min-width: 769px) and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/backgrounds/desktop-bg@2.jpg);
+  }
+}
+
 .hero-btn {
   display: inline-block;
   font-family: inherit;
@@ -984,4 +1037,248 @@ footer .logo {
   border-radius: 50%;
   background-color: var(--active-color);
   fill: var(--filter-btn-color);
+}
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(46, 47, 66, 0.4);
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 392px;
+  height: 586px;
+
+  padding: 72px 16px 24px 16px;
+
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition-property: transform;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+.btn-close {
+  display: flex;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  padding: 8px 8px;
+  background: #e7e9fc;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  cursor: pointer;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  background-color: var(--current-link-color);
+  border-color: var(--current-link-color);
+  fill: var(--main-backgroud-color);
+
+  transition-property: background-color, border-color, fill;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-title {
+  display: block;
+  text-align: center;
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: var(--primary-color);
+}
+
+.registration-form-field {
+  display: block;
+  position: relative;
+}
+
+.registration-form-label {
+  display: block;
+
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+.registration-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  padding-right: 38px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  outline: transparent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+
+  transition-property: border-color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.registration-form-input:focus {
+  border-color: var(--active-color);
+  fill: var(--active-color);
+}
+
+.registration-form-input:focus + .registration-form-icon {
+  fill: var(--active-color);
+}
+.registration-form-icon {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+
+  transition-property: fill;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.user-comment {
+  width: 100%;
+  height: 120px;
+  padding-top: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  resize: none;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+
+  background-color: transparent;
+  outline: transparent;
+
+  transition-property: border-color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.user-comment:focus {
+  border-color: var(--active-color);
+}
+
+.user-comment::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.registration-form-agreement {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.registration-form-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+
+  transition-property: background-color, border-color;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+.registration-form-checkbox:checked {
+  background-image: url(../images/chek.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-color: var(--current-link-color);
+  background-color: var(--current-link-color);
+}
+
+.registration-form-text {
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.registration-form-link {
+  color: var(--active-color);
+}
+
+.modal-btn {
+  display: block;
+  width: 169px;
+  height: 56px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background: var(--active-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--trans-duration);
+  transition-timing-function: var(--trans-tf);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
 }
